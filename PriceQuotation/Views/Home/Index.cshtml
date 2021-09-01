@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@*link to the model & Html*@
+@model PriceQuotationModel
+@{
+    ViewBag.Title = "Price Quotation";
+}
+
+@*This class is the view that the users sees, is also send inputs from the users to the controller.*@
+
+<h1>Price Quotation</h1>
+
+
+<form asp-action="Index" method="post">
+    <div asp-validation-summary="All"></div>
+    <div>
+        <label asp-for="Subtotal">
+            Subtotal:
+        </label>
+        <input asp-for="Subtotal" />
+    </div>
+    <div>
+        <label asp-for="DiscountPercent">
+            Discount percent:
+        </label>
+        <input asp-for="DiscountPercent" />
+    </div>
+    <div>
+        <label>Discount amount:</label>
+        <label>@ViewBag.DA.ToString("c2")</label>
+    </div>
+    <div>
+        <label>Total:</label>
+        <label>@ViewBag.FV.ToString("c2")</label>
+    </div>
+    <button type="submit">Calculate</button>
+    <a asp-action="Index">Clear</a>
+</form>

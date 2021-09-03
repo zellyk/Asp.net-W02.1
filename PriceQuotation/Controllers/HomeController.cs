@@ -19,7 +19,7 @@ namespace FutureValue.Controllers
             ViewBag.DA = 0;
             return View();
         }
-        // Controller view displaying results
+        // Controller view displaying results on the dynamic web page
         [HttpPost]
         public IActionResult Index(PriceQuotationModel model)
         {
